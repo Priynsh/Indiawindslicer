@@ -17,7 +17,6 @@ temp_cmap = cgrad([:blue, :lightblue, :green, :yellow, :orange, :red],
                  [0.0, 0.2, 0.4, 0.6, 0.8, 1.0])
 
 function find_nearest_temp(x, y, points, temps)
-    # Initialize three nearest distances and corresponding temperatures
     min_dist1, min_dist2, min_dist3 = Inf, Inf, Inf
     temp1, temp2, temp3 = missing, missing, missing
 
@@ -25,12 +24,10 @@ function find_nearest_temp(x, y, points, temps)
         dist = sqrt((x - points[1, i])^2 + (y - points[2, i])^2)
 
         if dist < min_dist1
-            # Shift the previous two nearest
             min_dist3, temp3 = min_dist2, temp2
             min_dist2, temp2 = min_dist1, temp1
             min_dist1, temp1 = dist, temps[i]
         elseif dist < min_dist2
-            # Shift the second nearest
             min_dist3, temp3 = min_dist2, temp2
             min_dist2, temp2 = dist, temps[i]
         elseif dist < min_dist3
