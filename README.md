@@ -8,7 +8,7 @@ The wind data used in this project is obtained from [Global Wind Atlas](https://
 
 ## Scope of Data
 
-Due to the large download size of the full dataset, **this project currently includes wind data only for India**.
+Due to the large download size of the entire dataset, **this project currently includes wind data only for India**.
 
 ## Available Heights
 
@@ -24,6 +24,9 @@ Wind data is available for the following heights above ground level:
 
 - A height **slider** is provided in the interface to slice the data by height.
 - When the slider is adjusted, the plot updates in real time to reflect the wind data at the selected height.
+- Sliders to choose latitude and longitude values one wants to slice.
+- Plot showing changing wind speeds with latitude and longitude.
+- When these sliders are adjusted, the plot updates in real time to reflect the wind data at the selected Lat/Long.
 ## Demo
   ![Demo](https://github.com/Priynsh/Indiawindslicer/blob/main/indiatemp.gif)
 ## Usage
