@@ -46,8 +46,6 @@ function temp_slicer()
         y_position = @lift(($lat_slice - 8) * (800)/ (37 - 8))
         x_position = @lift(($long_slice - 68) * (800)/ (97 - 68))
         fig = Figure(size=(650, 750))
-        fig.layout[1, 1] = GridLayout(height = Relative(0.85))  # Main heatmap gets 85% of height
-        fig.layout[2, 1] = GridLayout(height = Relative(0.15))  # Slice plot gets 15%
         ax = WGLMakie.Axis(fig[1, 1], title="Wind speeds")
         heatmap_obj = heatmap!(ax, x_grid, y_grid, zeros(grid_size, grid_size), 
                                colormap=temp_cmap, nan_color=:white)
